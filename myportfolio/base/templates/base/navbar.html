@@ -1,0 +1,40 @@
+{% load static %}
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="  
+             {% for loaderdata in logo %}
+                {{ loaderdata.logo_picture.url }}
+            {% endfor %}
+                " height="15" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span data-feather="menu" class="fea icon-md"></span>
+        </button><!--end button-->
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-link mx-auto">
+                {% for navmenus in navmenu %}
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#home">{{ navmenus.menu_name }}</a>
+                    </li>
+                    {% empty %}
+                    <li>Sorry, no menus in this list.</li>
+                {% endfor %}
+                 
+            </ul>
+            
+
+            <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                {% for logosocial in social_logo %}
+                    <li class="list-inline-item"><a href="{{ logosocial.social_link }}"><i class="{{ logosocial.social_class }}"></i></a></li>
+                {% empty %}
+                    <li>Sorry, no Social icon in this list.</li>
+                {% endfor %}
+            </ul>
+            
+        </div> 
+    </div><!--end container-->
+</nav><!--end navbar-->
+<!-- Navbar End -->

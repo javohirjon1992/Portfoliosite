@@ -1,0 +1,72 @@
+ <!-- Resume Start -->
+ <section class="section" id="resume">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                
+                {% for datapart in work_participation %}
+                <div class="section-title">
+                    <div class="titles">
+                        <h4 class="title title-line text-uppercase mb-4 pb-4"> {{ datapart.work_part }} </h4>
+                        <span></span>
+                    </div>
+                    <p class="text-muted mx-auto para-desc mb-0">{{ datapart.work_part_detail }}</p>
+                </div>
+                
+                {% endfor %}
+                    
+                
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="main-icon rounded-pill text-center mt-4 pt-2">
+                    <i data-feather="star" class="fea icon-md-sm"></i>
+                </div>
+                <div class="timeline-page pt-2 position-relative">
+
+
+        {% for datapartdetail in work_part_detail %}
+
+            {% if forloop.counter|divisibleby:2 %}
+                    <div class="timeline-item mt-4">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="duration date-label-left border rounded p-2 pl-4 pr-4 position-relative shadow text-left">{{datapartdetail.begin_work}} - {{datapartdetail.end_work}}</div>
+                            </div><!--end col-->
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="event event-description-right rounded p-4 border float-left text-left">
+                                    <h5 class="title mb-0 text-capitalize">{{ datapartdetail.your_position}}</h5>
+                                    <small class="company"> {{ datapartdetail.company_name}} - {{ datapartdetail.name_skills}} </small>
+                                    <p class="timeline-subtitle mt-3 mb-0 text-muted">{{ datapartdetail.complete_projects }}</p>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end timeline item-->
+            {% else %}
+            
+                <div class="timeline-item mt-4">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2">
+                            <div class="event event-description-left rounded p-4 border float-left text-right">
+                                <h5 class="title mb-0 text-capitalize">{{ datapartdetail.your_position}}</h5>
+                                <small class="company">{{ datapartdetail.company_name}} - {{ datapartdetail.name_skills}}</small>
+                                <p class="timeline-subtitle mt-3 mb-0 text-muted">{{ datapartdetail.complete_projects }}</p>
+                            </div>
+                        </div><!--end col-->
+                        <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
+                            <div class="duration duration-right rounded border p-2 pl-4 pr-4 position-relative shadow text-left">{{datapartdetail.begin_work}} - {{datapartdetail.end_work}}</div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end timeline item-->
+            {% endif %}
+        {% endfor %}
+
+                </div><!--end timeline page-->
+                <!-- TIMELINE END -->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section><!--end section-->   
+<!-- Skill End -->

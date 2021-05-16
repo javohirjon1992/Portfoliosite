@@ -1,0 +1,95 @@
+{% load static %}
+<!-- About Start -->
+<section class="section pb-3" id="about">
+    <div class="container">
+{% for detail in about_detail %}
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-5">
+                <div class="about-hero">
+                    <img src="{{ detail.your_picture.url }}" class="img-fluid mx-auto d-block about-tween position-relative" alt="">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                <div class="section-title mb-0 ml-lg-5 ml-md-3">
+                    <h4 class="title text-primary mb-3">{{ detail.full_name }}</h4>
+                    <h6 class="designation mb-3">{{ detail.about_us }} <span class="text-primary">{{ detail.about_prof }}</span></h6>
+                    <p class="text-muted"> {{ detail.about_more }} </p>
+                    
+                    <img src="{{ detail.your_sign.url }}" height="22" alt="">
+                    <div class="mt-4">
+                        <a href="#projects" class="btn btn-primary mouse-down">View Portfolio</a>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+
+    <div class="container mt-100 mt-60">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <div class="titles">
+                        <h4 class="title title-line text-uppercase mb-4 pb-4">{{ detail.your_hobbi }}</h4>
+                        <span></span>
+                    </div>
+                    <p class="text-muted mx-auto para-desc mb-0"> {{ detail.your_hobbi_detail }}</p>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+{% endfor %}        
+        <div class="row">
+            
+            {% for interests in interest %}
+            <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2">
+                <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
+                    <div class="hobbies d-flex align-items-center">
+                        <div class="text-center rounded-pill mr-4">
+                            <i data-feather="{{ interests.your_interest_title }}" class="icon fea icon-md-sm"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title mb-0">{{interests.your_interest_detail}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end col-->
+            
+            {% endfor %}
+
+        </div>
+    </div><!--end container-->
+
+
+
+        <div class="container-fluid mt-100 mt-60">
+            <div class="rounded py-md-5 py-4" style="background: url(
+                {% for datatotal in result_image %}
+                '{{ datatotal.result_image.url }}'
+                {% endfor %}
+                
+                ) center center;">
+                <div class="container">
+                    <div class="row" id="counter">
+
+                        {% for totalresult in result_total %}
+                        <div class="col-lg-3 col-6">
+                            <div class="counter-box rounded py-3 text-center">
+                                <div class="counter-icon">
+                                    <i data-feather="{{totalresult.result_class}}" class="fea icon-md text-primary"></i>
+                                </div>
+                                <h3 class="counter-value mt-3 text-white title-dark" data-count="{{totalresult.result_total}}">95</h3>
+                                <h6 class="counter-head font-weight-normal mb-0 text-white title-dark">{{totalresult.result_name}}</h6>
+                            </div><!--end counter box-->
+                        </div><!--end col-->  
+                        {% endfor %}
+                         
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div><!--end div-->
+        </div><!--end container fluid-->
+    
+
+    
+</section>
+<!-- About end -->
+    

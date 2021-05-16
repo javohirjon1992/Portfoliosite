@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html lang="en">
+{% load static %}
+    <head>
+        <meta charset="utf-8" />
+        <title>Cristino - Personal Portfolio Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+        <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Magnific -->
+        <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="{% static 'css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLICK SLIDER -->
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"/> 
+        <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}"/> 
+        <link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}"/>    
+        <!-- Custom Css -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="{% static 'css/colors/default.css' %}" rel="stylesheet" id="color-opt">
+
+    </head>
+
+    <body>
+{% include "base/loader.html" %}
+{% include "base/navbar.html" %}
+{% include "base/home.html" %}
+{% include "base/about.html" %}
+{% include "base/services.html" %}
+{% include "base/resume.html" %}
+{% include "base/skills.html" %}
+{% include "base/projects.html" %}
+{% include "base/testimonitial.html" %}
+{% include "base/blog.html" %}
+{% include "base/contact.html" %}
+{% include "base/footer.html" %}
+    {% block content %}
+
+
+
+    {% endblock content %}
+    
+<!-- javascript -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'js/scrollspy.min.js' %}"></script>
+<!-- SLIDER -->
+<script src="{% static 'js/owl.carousel.min.js' %} "></script>
+<!-- Magnific Popup -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/isotope.js' %}"></script>
+<script src="{% static 'js/portfolio-filter.js' %}"></script> 
+<script src="{% static 'js/magnific.init.js' %}"></script> 
+<!-- Contact -->
+<script src="{% static 'js/contact.js' %}"></script>
+<!-- Counter -->
+<script src="{% static 'js/counter.init.js' %}"></script>
+<!-- Tweenmax Js -->
+<script src="{% static 'js/jquery-twennmax.js' %}"></script>
+<script src="{% static 'js/TweenMax.min.js' %}"></script>
+<script src="{% static 'js/jquery-twennmax.init.js' %}"></script>
+<!-- Feather icon -->
+<script src="{% static 'js/feather.min.js' %}"></script>
+<!-- Main Js -->
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>
